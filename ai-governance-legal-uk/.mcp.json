@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "uk-legal": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-uk-legal"]
+    },
+    "govuk": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-govuk"]
+    },
+    "uk-due-diligence": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-uk-due-diligence"]
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "Search messages, read channels, find discussions across your workspace."
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Search, read, and fetch documents from Google Drive."
+    }
+  },
+  "recommendedCategories": [
+    "legal-research",
+    "legislation",
+    "case-law",
+    "documents",
+    "chat",
+    "email"
+  ]
+}

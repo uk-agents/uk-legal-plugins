@@ -1,0 +1,20 @@
+# Gap Tracker — UK
+# Populated by policy-diff handoffs. Tracks open UK regulatory policy gaps until closed or risk-accepted.
+# Citations in OSCOLA format. Verify all SI numbers, Act section numbers, and FCA Handbook references before relying on them.
+
+gaps: []
+
+# Example:
+# - id: GAP-001
+#   requirement: "Must disclose material information to the FCA under PRIN 11 in a timely manner"
+#   regulation: "Financial Services and Markets Act 2000, s 64A; FCA Handbook PRIN 11 [FCA-HANDBOOK]"
+#   policy_affected: "Regulatory Reporting Policy v2.1"
+#   gap_type: "partial"
+#   owner: "compliance@company.com"
+#   owner_slack: ""
+#   opened: 2026-03-01
+#   due: 2026-06-01
+#   status_verified: true
+#   status: "open"
+#   notified: false
+#   resolution: ""

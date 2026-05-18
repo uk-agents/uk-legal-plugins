@@ -1,0 +1,37 @@
+# Renewal Register (UK)
+#
+# Populated by saas-msa-review (handoffs) and renewal-tracker Mode 3 (CLM scan).
+# Each entry tracks when a contract renews and when you have to cancel by.
+#
+# The renewal-watcher agent reads this weekly and posts what's coming up.
+#
+# Note: cancel_by_effective applies UK business-day roll-back (E&W bank holidays
+# by default; Scots bank holidays where governing law is Scots law).
+
+renewals: []
+
+# Example entry (remove once real data exists):
+#
+# - counterparty: "Acme SaaS Ltd."
+#   agreement: "Acme Platform Subscription Agreement"
+#   signed_date: 2025-06-15
+#   initial_term_end: 2026-06-15
+#   current_term_end: 2026-06-15     # rolls forward after each auto-renewal
+#   renewal_mechanism: "auto-renew annual"
+#   notice_period_days: 60
+#   notice_method: "email"           # email / portal / written notice / registered post / per contract §X
+#   transit_buffer_days: 0           # 0 for email, 2 for first-class post, 5 for registered post
+#   governing_law: "English law"     # English law / Scots law / NI law / other
+#   cancel_by_calendar: 2026-04-16   # current_term_end minus notice_period_days (raw arithmetic)
+#   cancel_by_effective: 2026-04-16  # rolled back to last UK business day (E&W bank holidays)
+#   send_by_effective: 2026-04-16    # cancel_by_effective minus transit_buffer_days — date to SEND the notice
+#   cancel_by_roll_note: ""          # e.g., "rolled back from Sunday 2026-11-01; verify against contract's business-day definition"
+#   cancel_by_provenance: "[model calculation — verify against the notice clause]"
+#   price_on_renewal: "then-current list (uncapped)"
+#   annual_value: 48000              # in GBP
+#   currency: "GBP"
+#   business_owner: "jane@company.com"
+#   clm_id: "IC-12345"              # if connected
+#   docusign_envelope: "abc-123"    # if connected
+#   status: "active"                # active | cancelled | renewed | lapsed
+#   notes: "Pricing uncapped — revisit before renewal. CPI escalator kicks in on renewal."

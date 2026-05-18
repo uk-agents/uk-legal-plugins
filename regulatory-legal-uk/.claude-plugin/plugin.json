@@ -1,0 +1,8 @@
+{
+  "name": "regulatory-legal-uk",
+  "version": "1.0.0",
+  "description": "Watches UK regulatory feeds (FCA, ICO, CMA, Ofcom, PRA, HSE, MHRA, HM Treasury, GOV.UK consultations, legislation.gov.uk), diffs new rules against your policy library, tracks consultation response deadlines and open gaps, and writes the digest your team reads Monday morning. Jurisdiction: England & Wales, Scotland, Northern Ireland.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

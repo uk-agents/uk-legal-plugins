@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "uk-legal": {
+      "type": "http",
+      "url": "https://uk-legal-mcp.fly.dev/mcp",
+      "title": "UK Legal",
+      "description": "UK case law (TNA Find Case Law), legislation (legislation.gov.uk), Hansard, Bills, Parliamentary Votes, Committees, HMRC guidance, and OSCOLA citation parsing."
+    },
+    "govuk": {
+      "type": "http",
+      "url": "https://govuk-mcp.fly.dev/mcp",
+      "title": "GOV.UK",
+      "description": "GOV.UK content, guidance, organisations, SRA/BSB guidance, and government regulatory material."
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "Search messages, read channels, find discussions across your workspace."
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Search, read, and fetch documents from Google Drive."
+    }
+  },
+  "recommendedCategories": [
+    "legal-research",
+    "case-law",
+    "documents",
+    "chat"
+  ]
+}

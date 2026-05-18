@@ -1,0 +1,8 @@
+{
+  "name": "commercial-legal-uk",
+  "version": "1.0.0",
+  "description": "Reviews vendor agreements, NDAs, and SaaS subscriptions against your sales-side or purchasing-side playbook under English contract law, tracks renewals and cancel-by deadlines before they're missed, routes escalations to the right approver (including CMA, FCA, and ICO referrals where required), and translates reviews into summaries business stakeholders will actually read. Covers England & Wales, Scotland, and Northern Ireland — with jurisdiction notes where Scots law diverges from English law.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

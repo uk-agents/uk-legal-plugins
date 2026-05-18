@@ -1,0 +1,8 @@
+{
+  "name": "law-student-uk",
+  "version": "1.0.0",
+  "description": "Drills Socratically, briefs cases, builds outlines, runs SQE and LLB exam prep tuned to your subjects and qualification route, grades IRAC/CILAC practice, and plans the study schedule — without ever writing it for you. Built for the English, Welsh, Scottish, and Northern Irish legal education systems: LLB, GDL, SQE1/SQE2, BPTC, CILEx, and Scottish DPLP routes. Citations follow OSCOLA; cases sourced from BAILII and legislation from legislation.gov.uk.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

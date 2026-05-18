@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "uk-legal": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-uk-legal"]
+    },
+    "govuk": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-govuk"]
+    },
+    "uk-due-diligence": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-uk-due-diligence"]
+    }
+  }
+}

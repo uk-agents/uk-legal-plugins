@@ -1,0 +1,8 @@
+{
+  "name": "legal-clinic-uk",
+  "version": "1.0.0",
+  "description": "Runs UK law school clinics operating under SRA and BSB supervision rules — structured client intake, OSCOLA-annotated research roadmaps, jurisdiction-aware drafting for England & Wales, Scotland, and Northern Ireland, and semester handoffs — all gated through a supervising solicitor or barrister and the student practice framework.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

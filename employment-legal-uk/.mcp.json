@@ -1,0 +1,49 @@
+{
+  "mcpServers": {
+    "uk-legal": {
+      "type": "http",
+      "url": "https://uk-legal-mcp.fly.dev/mcp",
+      "title": "UK Legal",
+      "description": "UK case law (TNA Find Case Law), legislation (legislation.gov.uk), Hansard, Bills, Parliamentary Votes, Committees, HMRC guidance, and OSCOLA citation parsing."
+    },
+    "bailii": {
+      "type": "stdio",
+      "command": "bailii-mcp",
+      "title": "BAILII",
+      "description": "British and Irish Legal Information Institute — full-text case law search and judgment retrieval. Must run locally (BAILII blocks cloud IPs)."
+    },
+    "govuk": {
+      "type": "http",
+      "url": "https://govuk-mcp.fly.dev/mcp",
+      "title": "GOV.UK",
+      "description": "GOV.UK content, guidance, organisations, and postcode-to-local-authority lookup."
+    },
+    "uk-due-diligence": {
+      "type": "http",
+      "url": "https://uk-due-diligence-mcp.fly.dev/mcp",
+      "title": "UK Due Diligence",
+      "description": "Companies House, Charity Commission, HMLR Land Registry, The Gazette (insolvency notices), and HMRC VAT register."
+    },
+    "whatdotheyknow": {
+      "type": "http",
+      "url": "https://whatdotheyknow-mcp.fly.dev/mcp",
+      "title": "WhatDoTheyKnow",
+      "description": "WhatDoTheyKnow FOI request data — search and read public Freedom of Information requests and responses."
+    },
+    "property": {
+      "type": "http",
+      "url": "https://property-shared.fly.dev/mcp",
+      "title": "UK Property",
+      "description": "UK property data — comparable sales, EPC certificates, rental yields, SDLT calculations, planning search, and property report generation."
+    }
+  },
+  "recommendedCategories": [
+    "legal-research",
+    "legislation",
+    "case-law",
+    "foi",
+    "documents",
+    "hris",
+    "email"
+  ]
+}

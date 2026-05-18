@@ -1,0 +1,64 @@
+{
+  "mcpServers": {
+    "uk-legal": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-uk-legal"]
+    },
+    "govuk": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-govuk"]
+    },
+    "uk-due-diligence": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-uk-due-diligence"]
+    },
+    "Ironclad": {
+      "type": "http",
+      "url": "https://mcp.na1.ironcladapp.com/mcp",
+      "title": "Ironclad",
+      "description": "Search your contract repository and workflows using plain language — expiring MSAs, termination clauses, vendor agreements — scoped to your permissions."
+    },
+    "DocuSign": {
+      "type": "http",
+      "url": "https://mcp.docusign.com/mcp",
+      "title": "DocuSign",
+      "description": "Agreement search, status tracking, and signature workflows."
+    },
+    "iManage": {
+      "type": "http",
+      "url": "https://cloudimanage.com/mcp/work",
+      "title": "iManage",
+      "description": "Governed iManage content connected to Claude — documents stay in iManage, access is permission-bound and auditable."
+    },
+    "Definely": {
+      "type": "http",
+      "url": "https://mcp.uk.definely.com/api/proxy/core-mcp",
+      "title": "Definely",
+      "description": "Live, deterministic access to contract structure — resolve definitions, validate cross-references, map dependencies, run structural diffs."
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "Search messages, read channels, find discussions across your workspace."
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Search, read, and fetch documents from Google Drive."
+    }
+  },
+  "recommendedCategories": [
+    "contract-management",
+    "e-signature",
+    "legal-document-management",
+    "legal-research",
+    "legislation",
+    "case-law",
+    "email",
+    "documents",
+    "chat",
+    "contract-review"
+  ]
+}

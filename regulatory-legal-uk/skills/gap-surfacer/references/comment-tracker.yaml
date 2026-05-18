@@ -1,0 +1,25 @@
+# Consultation Response Tracker — UK
+# Populated automatically by reg-feed-watcher when UK consultations are detected.
+# Managed via /regulatory-legal-uk:comments
+# UK terminology: "consultation response" or "response to consultation" — not "comment letter"
+
+consultations:
+  - id: CMT-001
+    regulation: "[UK consultation title + GOV.UK/FCA/ICO/Ofcom reference]"
+    regulator: "[authority name — e.g., FCA, ICO, Ofcom, HM Treasury]"
+    document_type: "CP"  # CP (Consultation Paper) | DP (Discussion Paper) | GOV-CONSULTATION | SELECT-COMMITTEE | SI-DRAFT
+    summary: "[one sentence — what this consultation proposes]"
+    link: "[GOV.UK or regulator URL]"
+    consultation_closing_date: "2026-05-15"
+    detected: "2026-03-20"
+    decision: "undecided"  # undecided | responding | not-responding | responded | waived
+    owner: "[default consultation decision owner from CLAUDE.md]"
+    owner_slack: "[Slack user ID or handle]"
+    notified: false
+    rationale: ""  # filled when decision is made
+    response_filed_at: null  # ISO datetime if response submitted
+    notes: ""
+    # UK-specific fields:
+    twelve_week_standard: true  # Cabinet Office 12-week consultation standard applies
+    parliamentary_stage: ""  # if related to a Bill: Second Reading | Committee stage | Report stage | Third Reading
+    si_procedure: ""  # if related to an SI: affirmative | negative | made-negative

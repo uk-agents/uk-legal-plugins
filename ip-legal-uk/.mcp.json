@@ -1,0 +1,49 @@
+{
+  "mcpServers": {
+    "uk-legal": {
+      "type": "http",
+      "url": "https://uk-legal-mcp.fly.dev/mcp",
+      "title": "UK Legal",
+      "description": "UK case law (TNA Find Case Law), legislation (legislation.gov.uk), Hansard, Bills, Parliamentary Votes, Committees, HMRC guidance, and OSCOLA citation parsing."
+    },
+    "govuk": {
+      "type": "http",
+      "url": "https://govuk-mcp.fly.dev/mcp",
+      "title": "GOV.UK",
+      "description": "GOV.UK content, guidance, organisations, and postcode-to-local-authority lookup. Use for IPO guidance, government IP policy, and official UK IP office publications."
+    },
+    "uk-due-diligence": {
+      "type": "http",
+      "url": "https://uk-due-diligence-mcp.fly.dev/mcp",
+      "title": "UK Due Diligence",
+      "description": "Companies House, Charity Commission, HMLR Land Registry, The Gazette (insolvency notices), and HMRC VAT register. Use for counterparty diligence in IP enforcement matters."
+    },
+    "Solve Intelligence": {
+      "type": "http",
+      "url": "https://api.solveintelligence.com/mcp/",
+      "title": "Solve Intelligence",
+      "description": "Patent workflows — search patent and non-patent literature, legal texts, SEP technical standards, prior art, claim analysis. Covers UK, EP, and PCT patents."
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "Search messages, read channels, find discussions across your workspace."
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Search, read, and fetch documents from Google Drive."
+    }
+  },
+  "recommendedCategories": [
+    "ip-management",
+    "legal-research",
+    "case-law",
+    "legislation",
+    "documents",
+    "chat",
+    "email"
+  ]
+}

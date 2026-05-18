@@ -1,0 +1,8 @@
+{
+  "name": "corporate-legal-uk",
+  "version": "1.0.0",
+  "description": "Runs M&A diligence at scale with cited tabular review under English law, builds disclosure letters and closing checklists, drafts board minutes and written resolutions in house format, and tracks entity compliance deadlines under the Companies Act 2006 across England & Wales, Scotland, and Northern Ireland. Covers UK takeover rules (Takeover Code / Panel), FCA/FSMA public company obligations, CMA merger control, Companies House filings, and PSC register management.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

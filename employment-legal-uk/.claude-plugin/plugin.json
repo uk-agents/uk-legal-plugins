@@ -1,0 +1,8 @@
+{
+  "name": "employment-legal-uk",
+  "version": "1.0.2",
+  "description": "Reviews hires and terminations for UK employment law risk flags, classifies workers across the employee/worker/self-employed spectrum, tracks statutory leave deadlines before they're missed, runs internal investigations, and drafts policies with jurisdiction supplements for England & Wales, Scotland, and Northern Ireland.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

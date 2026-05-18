@@ -1,0 +1,8 @@
+{
+  "name": "privacy-legal-uk",
+  "version": "1.0.0",
+  "description": "UK data-protection workflows under UK GDPR and DPA 2018: DPIA generation, DPA review (Art.28 processor obligations), DSAR response within the 1-month statutory deadline, lawful-basis triage with Children's Code checks, PECR and NIS coverage, and ICO-focused regulatory gap analysis. Configured to your practice profile and regulatory footprint.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

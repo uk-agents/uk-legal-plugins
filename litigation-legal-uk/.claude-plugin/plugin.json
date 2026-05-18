@@ -1,0 +1,8 @@
+{
+  "name": "litigation-legal-uk",
+  "version": "1.0.0",
+  "description": "Manages a UK litigation portfolio — matters, CPR deadlines, preservation notices, Letters Before Action, external solicitors and counsel — and does the work: claim charts (patent and civil under English law), chronologies, cross-examination prep, LPP logs, skeleton argument drafting. Adapts to how you work litigation in England & Wales, Scotland, and Northern Ireland: in-house, firm, or solo.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

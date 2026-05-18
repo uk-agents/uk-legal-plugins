@@ -1,0 +1,46 @@
+# Clinic deadline ledger — legal-clinic-uk
+#
+# Populated by /legal-clinic-uk:deadlines --add (or by extraction from
+# /client-intake, /draft, /status when those skills surface a deadline).
+# Read by /legal-clinic-uk:deadlines --report for cross-case rollup.
+#
+# Missed deadlines in clinic work are professional negligence exposure for the
+# supervising solicitor or barrister. Treat this file as the operational record.
+#
+# ──────────────────────────────────────────────────────────────────────────
+# Schema
+# ──────────────────────────────────────────────────────────────────────────
+# - id:             string (slug: [case]-[short-description]-[YYYY-MM])
+#   case_id:        string — references the case / client in intake system
+#   case_name:      string — human-readable case name
+#   practice_area:  immigration | housing | family | consumer | employment |
+#                   criminal-defence | civil-rights | benefits | debt | other
+#   type:           filing | hearing | tribunal | statute-of-limitations |
+#                   limitation | discovery | cure-period | response | notice |
+#                   et-claim | et-preliminary | appeal | review | other
+#   description:    string — one-line what's due
+#   due_date:       YYYY-MM-DD
+#   time:           HH:MM (optional; for hearings or filing deadlines with
+#                   specific cutoffs — Employment Tribunal deadlines are strict)
+#   timezone:       string (optional; default Europe/London)
+#   source:         string — where the deadline came from (tribunal order,
+#                   statute, client doc, Limitation Act 1980 s.2, etc.)
+#   owner_student:  string — which student owns this deadline
+#   owner_attorney: string — supervising solicitor / barrister (from CLAUDE.md)
+#   status:         upcoming | today | overdue | completed | closed
+#   completed_date: YYYY-MM-DD | null
+#   notes:          string | null
+#   created:        YYYY-MM-DD
+#   created_by:     string — student who logged it
+# ──────────────────────────────────────────────────────────────────────────
+#
+# Key UK limitation periods to be aware of (for plausibility checks):
+#   Employment Tribunal claims:  3 months less one day from act/dismissal (strict)
+#   Personal injury:             3 years (Limitation Act 1980 s.11)
+#   Contract claims:             6 years (Limitation Act 1980 s.5)
+#   Housing possession/rent:     6 years
+#   Scotland:                    Prescription & Limitation (Scotland) Act 1973
+#   Northern Ireland:            Limitation (NI) Order 1989
+# ──────────────────────────────────────────────────────────────────────────
+
+deadlines: []

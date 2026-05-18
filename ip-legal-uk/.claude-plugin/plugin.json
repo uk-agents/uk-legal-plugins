@@ -1,0 +1,8 @@
+{
+  "name": "ip-legal-uk",
+  "version": "1.0.0",
+  "description": "UK intellectual property practice: trade mark clearance and freedom-to-operate triage under Trade Marks Act 1994, copyright under CDPA 1988, patents under Patents Act 1977 and EPC, designs under the Registered Designs Act 1949 and CDPA 1988, trade secrets under English law of confidence and Trade Secrets (Enforcement, etc.) Regulations 2018, and open source compliance. Manages filings at the UK IPO (trade marks, patents, designs), tracks renewal deadlines, drafts and triages cease-and-desist letters and online takedowns (UK and EU notice regimes), reviews IP clauses, and handles post-Brexit UK/EU split portfolios. For use by solicitors, patent attorneys, Chartered Patent Attorneys, IP paralegals, and in-house IP teams operating in England & Wales, Scotland, and Northern Ireland.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

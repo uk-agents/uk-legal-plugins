@@ -1,0 +1,64 @@
+{
+  "mcpServers": {
+    "uk-legal": {
+      "type": "http",
+      "url": "https://uk-legal-mcp.fly.dev/mcp",
+      "title": "UK Legal",
+      "description": "UK case law (TNA Find Case Law), legislation (legislation.gov.uk), Hansard, Bills, Parliamentary Votes, Committees, HMRC guidance, and OSCOLA citation parsing."
+    },
+    "uk-due-diligence": {
+      "type": "http",
+      "url": "https://uk-due-diligence-mcp.fly.dev/mcp",
+      "title": "UK Due Diligence",
+      "description": "Companies House, Charity Commission, HMLR Land Registry, The Gazette (insolvency notices), and HMRC VAT register."
+    },
+    "govuk": {
+      "type": "http",
+      "url": "https://govuk-mcp.fly.dev/mcp",
+      "title": "GOV.UK",
+      "description": "GOV.UK content, guidance, organisations, and postcode-to-local-authority lookup."
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "Search messages, read channels, find discussions across your workspace."
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Search, read, and fetch documents from Google Drive."
+    },
+    "Box": {
+      "type": "http",
+      "url": "https://mcp.box.com/mcp",
+      "title": "Box",
+      "description": "Data room and document management."
+    },
+    "iManage": {
+      "type": "http",
+      "url": "https://cloudimanage.com/mcp/work",
+      "title": "iManage",
+      "description": "Governed iManage content connected to Claude — documents stay in iManage, access is permission-bound and auditable."
+    },
+    "Definely": {
+      "type": "http",
+      "url": "https://mcp.uk.definely.com/api/proxy/core-mcp",
+      "title": "Definely",
+      "description": "Live, deterministic access to contract structure — resolve definitions, validate cross-references, map dependencies, run structural diffs."
+    }
+  },
+  "recommendedCategories": [
+    "legal-document-management",
+    "virtual-data-room",
+    "contract-review",
+    "board-governance",
+    "legal-research",
+    "legislation",
+    "case-law",
+    "documents",
+    "chat",
+    "email"
+  ]
+}

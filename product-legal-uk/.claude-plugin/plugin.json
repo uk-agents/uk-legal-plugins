@@ -1,0 +1,8 @@
+{
+  "name": "product-legal-uk",
+  "version": "1.0.0",
+  "description": "Reviews product launches against UK consumer protection law and your risk calibration, answers 'is this a problem?' questions in minutes, checks marketing copy for claims that need ASA/CAP Code substantiation, and flags upcoming launches that need legal eyes before anyone asks. Covers CMA, ASA, ICO, FCA, MHRA, and Online Safety Act exposure across the product lifecycle.",
+  "author": {
+    "name": "Anthropic"
+  }
+}
