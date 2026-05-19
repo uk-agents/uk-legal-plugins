@@ -52,7 +52,7 @@ Your configuration is stored at `~/.claude/plugins/config/uk-legal-plugins/litig
 | `/litigation-legal-uk:demand-intake [title]` | Pre-drafting context gathering for a Letter Before Action (payment / breach / C&D / employment separation / preservation) |
 | `/litigation-legal-uk:demand-draft [slug]` | Draft the Letter of Claim from intake — runs LPP / settlement-communication gate, outputs `.docx`, writes post-send checklist |
 | `/litigation-legal-uk:demand-received [path]` | Triage an inbound Letter Before Action — options analysis, portfolio cross-check, hand off to matter/demand-intake |
-| `/litigation-legal-uk:subpoena-triage [path]` | Triage a witness summons or third-party disclosure order — classify, scope/burden/privilege, objections framework, compliance plan |
+| `/litigation-legal-uk:witness-summons-triage [path]` | Triage a witness summons or third-party disclosure order — classify, scope/burden/privilege, objections framework, compliance plan |
 | `/litigation-legal-uk:legal-hold [slug] [--issue/--refresh/--release/--status]` | Issue, refresh, release, or report preservation notices — writes `.docx` + updates log |
 | `/litigation-legal-uk:chronology [slug]` | Build or update a chronology from declared doc sources + uploads — tagged by significance per matter theory |
 | `/litigation-legal-uk:oc-status` | Draft weekly external solicitor status-request emails across the portfolio; Gmail drafts if MCP available |
@@ -71,7 +71,7 @@ Your configuration is stored at `~/.claude/plugins/config/uk-legal-plugins/litig
 | **demand-intake** | Adaptive context gathering for a Letter Before Action — parties, facts, leverage, LPP filters |
 | **demand-draft** | LPP / settlement-communication gate, then drafts `.docx` with `[CITE:___]` placeholders; writes post-send checklist; offers matter creation |
 | **demand-received** | Triage an inbound Letter Before Action — merit, options, portfolio cross-check |
-| **subpoena-triage** | Classify witness summons / third-party disclosure order, analyse scope/burden/privilege, produce objections framework + compliance plan |
+| **witness-summons-triage** | Classify witness summons / third-party disclosure order, analyse scope/burden/privilege, produce objections framework + compliance plan |
 | **legal-hold** | Issue / refresh / release / status-report on preservation notices; writes `.docx` notice; updates log's `legal_hold` fields |
 | **chronology** | Extract dated events from declared doc sources + uploads; de-dupe; tag significance per matter theory |
 | **oc-status** | Weekly portfolio-wide external solicitor status-request email drafter; markdown + Gmail drafts |

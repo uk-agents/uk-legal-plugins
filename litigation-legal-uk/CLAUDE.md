@@ -78,7 +78,7 @@ This file is the house-level frame every matter is triaged against. Risk calibra
 
 *Defendant posture: risk calibration is exposure, reserves (in-house only), settlement authority, insurance coverage. Letters of Claim are received and triaged. Disclosure is defensive.*
 
-*Skills that branch on side: `demand-draft` / `demand-received`, `subpoena-triage`, `matter-intake` (per-matter), `chronology` (offensive vs defensive framing), `claim-chart` (proving vs disproving elements).*
+*Skills that branch on side: `demand-draft` / `demand-received`, `witness-summons-triage`, `matter-intake` (per-matter), `chronology` (offensive vs defensive framing), `claim-chart` (proving vs disproving elements).*
 
 ---
 

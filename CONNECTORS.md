@@ -26,7 +26,6 @@ Connectors shipped in the default `.mcp.json` of each plugin:
 | **UK Legal MCP** | all 11 |
 | **Slack** | all 11 |
 | **Google Drive** (`gdrive`) | all 11 |
-| **Find Case Law (TNA)** | legal-clinic-uk, litigation-legal-uk, law-student-uk |
 | **Descrybe** | legal-clinic-uk, ip-legal-uk, law-student-uk |
 | **Definely** | commercial-legal-uk, corporate-legal-uk |
 | **iManage** | commercial-legal-uk, corporate-legal-uk |
@@ -43,7 +42,7 @@ Connectors shipped in the default `.mcp.json` of each plugin:
 
 See the `.mcp.json` in each plugin directory for the authoritative list.
 
-**Find Case Law (TNA)** — free public API, no authentication, rate-limited to 1,000 requests per 5 minutes. Returns judgments as Akoma Ntoso XML from England & Wales courts (Supreme Court, Court of Appeal, High Court, Upper Tribunals) from 2001 onwards. Replaces CourtListener, which covers US courts only.
+**UK Legal MCP** includes Find Case Law (TNA), BAILII, and legislation.gov.uk — covering E&W judgments from 2001, Scottish and NI case law, and the full UK statute book. It is the primary research connector for all 11 plugins.
 
 ## Wanted connectors
 

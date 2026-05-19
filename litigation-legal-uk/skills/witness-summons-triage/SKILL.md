@@ -1,10 +1,10 @@
 ---
-name: subpoena-triage
+name: witness-summons-triage
 description: Triage a witness summons or third-party disclosure order served on the company — classify it, analyse scope/burden/privilege, cross-check the portfolio, and produce an objections framework, compliance plan, and deadline calendar. Use when the user says "we got a witness summons", "third-party disclosure order", "served with a court order for documents", or shares a witness summons, third-party disclosure order, or regulatory notice to evaluate.
 argument-hint: "[path-to-document] [--slug=custom-slug]"
 ---
 
-# /subpoena-triage
+# /witness-summons-triage
 
 1. Read the witness summons or order from provided path.
 2. Classify (third-party-docs / witness-summons-depo / party / regulatory-notice / criminal).
