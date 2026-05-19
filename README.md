@@ -26,15 +26,45 @@ Works in any agent that supports the [Open Plugins spec](https://github.com/anth
 
 ## Install
 
-```bash
-claude plugin install https://github.com/uk-agents/uk-legal-plugins
-```
+### Claude Code and coding agents
 
-To install a single plugin:
+The repo is the marketplace. Add it first, then install plugins from it.
 
 ```bash
-claude plugin install https://github.com/uk-agents/uk-legal-plugins --plugin employment-legal-uk
+# Add the marketplace
+claude plugin marketplace add uk-agents/uk-legal-plugins
+
+# Install a single plugin
+claude plugin install employment-legal-uk@uk-legal-plugins
 ```
+
+To install all 11 at once:
+
+```bash
+for plugin in employment-legal-uk commercial-legal-uk corporate-legal-uk \
+  ip-legal-uk privacy-legal-uk product-legal-uk regulatory-legal-uk \
+  ai-governance-legal-uk litigation-legal-uk legal-clinic-uk law-student-uk; do
+  claude plugin install $plugin@uk-legal-plugins
+done
+```
+
+To remove:
+
+```bash
+claude plugin marketplace remove uk-legal-plugins  # removes marketplace and all its plugins
+claude plugin uninstall employment-legal-uk         # removes a single plugin
+```
+
+### Claude Cowork
+
+**Add the marketplace** (access all 11 plugins):
+1. Personal plugins → Create plugin → Add marketplace → enter `uk-agents/uk-legal-plugins`
+2. Go to Plugins → Personal and click `+` next to each plugin you want to install
+
+**Upload a single plugin** (ZIP file):
+Personal plugins → Create plugin → Upload plugin → upload a ZIP from the [Releases page](https://github.com/uk-agents/uk-legal-plugins/releases)
+
+> ZIP releases are not yet published — individual plugin ZIPs will be available in an upcoming release.
 
 ---
 
