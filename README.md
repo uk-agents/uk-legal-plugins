@@ -38,15 +38,7 @@ claude plugin marketplace add uk-agents/uk-legal-plugins
 claude plugin install employment-legal-uk@uk-legal-plugins
 ```
 
-To install all 11 at once:
-
-```bash
-for plugin in employment-legal-uk commercial-legal-uk corporate-legal-uk \
-  ip-legal-uk privacy-legal-uk product-legal-uk regulatory-legal-uk \
-  ai-governance-legal-uk litigation-legal-uk legal-clinic-uk law-student-uk; do
-  claude plugin install $plugin@uk-legal-plugins
-done
-```
+Or browse the plugins via /plugins command in chat session. 
 
 To remove:
 
@@ -62,9 +54,9 @@ claude plugin uninstall employment-legal-uk         # removes a single plugin
 2. Go to Plugins → Personal and click `+` next to each plugin you want to install
 
 **Upload a single plugin** (ZIP file):
-Personal plugins → Create plugin → Upload plugin → upload a ZIP from the [Releases page](https://github.com/uk-agents/uk-legal-plugins/releases)
-
-> ZIP releases are not yet published — individual plugin ZIPs will be available in an upcoming release.
+1. Download the ZIP for the plugin you want from the [Releases page](https://github.com/uk-agents/uk-legal-plugins/releases)
+2. In Cowork: Personal plugins → Create plugin → Upload plugin → select the ZIP file
+3. The plugin appears in your personal plugins list once uploaded
 
 ---
 
