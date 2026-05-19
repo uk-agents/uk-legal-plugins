@@ -1,0 +1,37 @@
+name: Release plugin ZIPs
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and upload plugin ZIPs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          plugins=(
+            ai-governance-legal-uk
+            commercial-legal-uk
+            corporate-legal-uk
+            employment-legal-uk
+            ip-legal-uk
+            law-student-uk
+            legal-clinic-uk
+            litigation-legal-uk
+            privacy-legal-uk
+            product-legal-uk
+            regulatory-legal-uk
+          )
+
+          for plugin in "${plugins[@]}"; do
+            zip -r "${plugin}.zip" "${plugin}/"
+            gh release upload "${{ github.event.release.tag_name }}" "${plugin}.zip" --clobber
+          done
