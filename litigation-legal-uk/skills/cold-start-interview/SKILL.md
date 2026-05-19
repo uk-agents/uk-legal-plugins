@@ -359,7 +359,7 @@ After the interview, before writing, summarise and **wait for an answer**:
 > - **Intake a new matter** — Uniform intake questions, writes matter.md + history.md, appends to the portfolio log. Try: `/litigation-legal-uk:matter-intake`
 > - **Triage an inbound Letter Before Action** — Options analysis, portfolio cross-check, handoff to matter intake if it graduates. Try: `/litigation-legal-uk:demand-received`
 > - **Draft a Letter of Claim** — LPP / settlement-communication gate, .docx output, post-send checklist, matter-creation offer. Try: `/litigation-legal-uk:demand-draft`
-> - **Prepare for cross-examination** — Docs + topics + impeachment + exhibits, tied to case theory. Try: `/litigation-legal-uk:deposition-prep`
+> - **Prepare for cross-examination** — Docs + topics + impeachment + exhibits, tied to case theory. Try: `/litigation-legal-uk:witness-examination-prep`
 > - **Issue or refresh a preservation notice** — Draft the notice, update the log, schedule a refresh. Try: `/litigation-legal-uk:legal-hold`
 > - **Portfolio rollup** — Risk distribution, upcoming CPR deadlines, stale matters across the active portfolio. Try: `/litigation-legal-uk:portfolio-status`
 >

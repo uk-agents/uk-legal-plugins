@@ -1,10 +1,10 @@
 ---
-name: deposition-prep
+name: witness-examination-prep
 description: Prepare for a witness examination — build a cross-examination outline or witness statement preparation questions, pull relevant documents, organise topics around the case theory, and surface impeachment or credibility material. Use when the user says "prep for [witness]'s cross-examination", "build a cross-examination outline", "prepare witness statement questions for [name]", or needs to prepare for oral evidence.
 argument-hint: "[witness name]"
 ---
 
-# /deposition-prep
+# /witness-examination-prep
 
 1. Load `~/.claude/plugins/config/uk-legal-plugins/litigation-legal-uk/CLAUDE.md` → case theory, key facts.
 2. Follow the workflow and reference below.

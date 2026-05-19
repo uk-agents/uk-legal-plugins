@@ -457,7 +457,7 @@ Deliver the chart alongside the brief.
 ## Relationship to other skills
 
 - `litigation-legal-uk:chronology` — the chronology is the timeline; the element chart is the proof matrix. A chronology entry often becomes a cell's evidence cite.
-- `litigation-legal-uk:deposition-prep` — a `needs-disclosure` cell often becomes a witness preparation topic. After witness statements, new evidence fills cells.
+- `litigation-legal-uk:witness-examination-prep` — a `needs-disclosure` cell often becomes a witness preparation topic. After witness statements, new evidence fills cells.
 - `litigation-legal-uk:brief-section-drafter` — a summary judgment application's skeleton argument fact section is often built directly off the supported rows of an element chart.
 
 ---
