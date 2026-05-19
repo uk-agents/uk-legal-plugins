@@ -26,7 +26,7 @@ Connectors shipped in the default `.mcp.json` of each plugin:
 | **UK Legal MCP** | all 11 |
 | **Slack** | all 11 |
 | **Google Drive** (`gdrive`) | all 11 |
-| **CourtListener** | legal-clinic-uk, ip-legal-uk, litigation-legal-uk, law-student-uk |
+| **Find Case Law (TNA)** | legal-clinic-uk, litigation-legal-uk, law-student-uk |
 | **Descrybe** | legal-clinic-uk, ip-legal-uk, law-student-uk |
 | **Definely** | commercial-legal-uk, corporate-legal-uk |
 | **iManage** | commercial-legal-uk, corporate-legal-uk |
@@ -36,30 +36,32 @@ Connectors shipped in the default `.mcp.json` of each plugin:
 | **Ironclad** | commercial-legal-uk |
 | **DocuSign / DocuSign CLM** | commercial-legal-uk |
 | **Everlaw** | litigation-legal-uk |
-| **Trellis** | litigation-legal-uk |
 | **Aurora** | litigation-legal-uk |
-| **Courtroom5** | legal-clinic-uk |
 | **Linear** | product-legal-uk |
 | **Atlassian (Jira)** | product-legal-uk |
 | **Asana** | product-legal-uk |
 
 See the `.mcp.json` in each plugin directory for the authoritative list.
 
+**Find Case Law (TNA)** — free public API, no authentication, rate-limited to 1,000 requests per 5 minutes. Returns judgments as Akoma Ntoso XML from England & Wales courts (Supreme Court, Court of Appeal, High Court, Upper Tribunals) from 2001 onwards. Replaces CourtListener, which covers US courts only.
+
 ## Wanted connectors
 
 These would make specific plugins significantly more useful. If you build or operate one, see "How to submit" above.
 
 - **IP management systems** (Anaqua, Clarivate IPfolio, AppColl, Patrix, Alt Legal, FoundationIP) — full docket sync for `ip-legal-uk` portfolio tracking
-- **USPTO by customer number** — full portfolio status and deadlines, not just per-application lookup
-- **USPTO TSDR / Trademark Status** — trademark status and deadlines for `ip-legal-uk` brand management
+- **EPO Open Patent Services (OPS)** — free API (4 GB/month, registration required) covering UK IPO, EP, and 100+ national offices via INPADOC. Portfolio lookups by applicant name. Best current free option for `ip-legal-uk` until the UKIPO One IPO API ships.
+- **UKIPO One IPO API** (in development, targeting 2026) — View rights portfolio, Renewals, and IP Register APIs for UK patents and trade marks. Will be the authoritative programmatic source for `ip-legal-uk` portfolio and deadline tracking.
+- **UK IPO Trade Mark Register** — trade mark status and renewal deadlines for `ip-legal-uk`. Web access free; programmatic access via UKIPO One IPO API when available.
 - **Jira / Linear / Asana for OSS requests** — `ip-legal-uk` OSS clearance can monitor and respond to incoming tickets
-- **Thomson Reuters** (CoCounsel, Practical Law, Westlaw) — research and drafting for every plugin
+- **Thomson Reuters** (Practical Law, Westlaw UK) — research and drafting for every plugin. Requires subscription.
 - **SS&C Intralinks / Datasite** — VDR access for `corporate-legal-uk` diligence
 - **Relativity / Everlaw beyond read** — eDiscovery workflow for `litigation-legal-uk`
-- **State bar CLE trackers** — `law-student-uk` bar prep
-- **Court e-filing systems** (PACER write, state e-filing) — with a hard irreversibility gate, obviously
-- **Global AI Regulation Tracker** (techieray.com/GlobalAIRegulationTracker) — jurisdiction-tagged AI regulation tracking with structured API. Curated, verified, multi-jurisdiction. Would be a primary-source-adjacent feed for `ai-governance-legal-uk` and `regulatory-legal-uk`.
-- **Regulatory primary sources** — a connector to official registers (eCFR, Federal Register, EUR-Lex, legislation.gov.uk, Federal Register of Legislation AU, Singapore Statutes Online) that bypasses the agent-blockers many legislative sites use. A curated regulatory knowledge base would be a high-value addition.
+- **SRA / BSB CPD tracker** — `law-student-uk` and qualification tracking. No official SRA/BSB API exists (the SRA moved to an outcomes-based model in 2016 with no central submission portal). A connector here would implement the SRA five-step reflection framework as a structured self-assessment tool and track BSB hours (12/year established practitioners).
+- **HMCTS e-filing** — with a hard irreversibility gate. HMCTS operates an online civil money claims and probate service; broader e-filing API access is part of the HMCTS data programme.
+- **HMCTS court listings (licensed)** — HMCTS is making hearing lists and outcome registers available to licensed recipients. Would give `litigation-legal-uk` court calendar and docket data comparable to Trellis. Requires application to HMCTS data licensing programme.
+- **Global AI Regulation Tracker** (techieray.com/GlobalAIRegulationTracker) — jurisdiction-tagged AI regulation tracking with structured API. Curated, verified, multi-jurisdiction. Primary-source-adjacent feed for `ai-governance-legal-uk` and `regulatory-legal-uk`.
+- **Regulatory primary sources** — a connector to official UK registers (legislation.gov.uk, FCA register, ICO register, Companies House, GOV.UK consultation tracker) that normalises and caches responses. legislation.gov.uk and GOV.UK already have free APIs; a unified connector wrapping them would be high value.
 
 ## Questions
 
