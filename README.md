@@ -1,4 +1,4 @@
-# UK Legal Plugins for Claude Code
+# UK Legal Plugins
 
 11 legal plugins built for UK jurisdiction — English & Welsh, Scottish, and Northern Irish law.
 
