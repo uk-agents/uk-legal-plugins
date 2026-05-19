@@ -60,6 +60,48 @@ claude plugin uninstall employment-legal-uk         # removes a single plugin
 
 ---
 
+## Getting started
+
+After installing a plugin, run the cold-start interview in a Claude Code session:
+
+```
+/employment-legal-uk:cold-start-interview
+```
+
+Replace `employment-legal-uk` with whichever plugin you installed.
+
+**Quick start (2 minutes):** records your role, practice setting, and jurisdictional footprint. Skills run immediately with sensible defaults.
+
+**Full setup (10–15 minutes):** adds your real termination triggers, seed documents, escalation matrix, and integration checks. More thorough outputs.
+
+The interview asks which at the start — you can upgrade any time with `--full` or re-run any section with `--redo`.
+
+### What it builds
+
+The interview writes a plain-text practice profile to:
+
+```
+~/.claude/plugins/config/uk-legal-plugins/[plugin-name]/CLAUDE.md
+```
+
+Every skill reads this file before doing anything. It survives plugin updates and can be edited directly.
+
+### Shared company profile
+
+The first plugin you configure saves your company name, industry, jurisdiction list, and escalation chain to a shared profile:
+
+```
+~/.claude/plugins/config/uk-legal-plugins/company-profile.md
+```
+
+Every other plugin reads this and skips those questions — so setup gets faster as you add more plugins.
+
+### Connect a research tool (optional)
+
+Pair with the [UK Legal MCP server](https://github.com/uk-agents/uk-legal-mcp) for live case law and legislation. Without it, every citation is tagged `[model knowledge — verify]`.
+
+---
+
 ## Agent compatibility
 
 | Agent | Supported |
