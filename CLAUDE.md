@@ -17,6 +17,9 @@ prompt content (skills, agents, hooks) or plugin metadata — not application co
   agents/<name>.md                # subagent definitions
   hooks/hooks.json                # hook config (most plugins ship an empty stub)
   .gitignore
+references/                       # shared templates read by cold-start and dashboard skills
+  company-profile-template.md     # shape of ~/.claude/plugins/config/uk-legal-plugins/company-profile.md
+  dashboard-template.md           # rendering standard for HTML/terminal/Excel dashboard outputs
 ```
 
 ## Validation — run before opening a PR
@@ -97,4 +100,3 @@ expected. Don't "fix" it by moving the content into a skill.
   intentional; ask before unifying.
 - `hooks/hooks.json` is missing in two plugins. Hooks are optional; the missing
   files are not a bug.
-- Several plugin `CLAUDE.md` templates reference `references/` at repo root as if it were bundled inside the plugin directory. That's a known gap — don't silently move the files.
