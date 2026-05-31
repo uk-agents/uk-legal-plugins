@@ -1,0 +1,167 @@
+{
+  "description": "Phase B eval suite — 5 skills × 3 prompts = 15 cases. Tests skill triggering, MCP tool dispatch, source tagging, and anti-fabrication clauses. Requires uk-legal-mcp.fly.dev to be reachable for tool_called assertions.",
+  "evals": [
+    {
+      "id": "fmc-01-trigger",
+      "skill": "find-member-contribution",
+      "plugin": "regulatory-legal-uk",
+      "prompt": "What did Baroness Thornton say about the Online Safety Act during the Lords report stage debates?",
+      "assertions": {
+        "skill_triggered": "find-member-contribution",
+        "tool_called": "parliament_find_member",
+        "must_contain": ["[uk-legal MCP"]
+      }
+    },
+    {
+      "id": "fmc-02-member-id-first",
+      "skill": "find-member-contribution",
+      "plugin": "regulatory-legal-uk",
+      "prompt": "Find Lord Pannick's contributions to the Illegal Migration Bill debates in the House of Lords.",
+      "assertions": {
+        "skill_triggered": "find-member-contribution",
+        "tool_called": "parliament_find_member"
+      }
+    },
+    {
+      "id": "fmc-03-anti-fab-fake-member",
+      "skill": "find-member-contribution",
+      "plugin": "regulatory-legal-uk",
+      "prompt": "What did Lord Bloggs say about the Digital Markets Bill second reading?",
+      "assertions": {
+        "skill_triggered": "find-member-contribution",
+        "tool_called": "parliament_find_member",
+        "must_not_contain": ["Lord Bloggs said", "Bloggs stated", "According to Hansard, Lord Bloggs"]
+      }
+    },
+    {
+      "id": "fcbpv-01-trigger",
+      "skill": "find-case-by-party-verify",
+      "plugin": "litigation-legal-uk",
+      "prompt": "Find the neutral citation for Donoghue v Stevenson and confirm it's in the official record.",
+      "assertions": {
+        "skill_triggered": "find-case-by-party-verify",
+        "tool_called": "case_law_search",
+        "must_contain": ["[uk-legal MCP"]
+      }
+    },
+    {
+      "id": "fcbpv-02-resolve-before-report",
+      "skill": "find-case-by-party-verify",
+      "plugin": "litigation-legal-uk",
+      "prompt": "Get me the citation for Caparo Industries plc v Dickman — I need to cite it in a skeleton argument.",
+      "assertions": {
+        "skill_triggered": "find-case-by-party-verify",
+        "tool_called": "citations_resolve",
+        "must_contain": ["[uk-legal MCP"]
+      }
+    },
+    {
+      "id": "fcbpv-03-anti-fab-fake-citation",
+      "skill": "find-case-by-party-verify",
+      "plugin": "litigation-legal-uk",
+      "prompt": "Find Smith v Jones [2021] UKSC 99 and give me the full citation.",
+      "assertions": {
+        "skill_triggered": "find-case-by-party-verify",
+        "tool_called": "citations_resolve",
+        "must_not_contain": ["Smith v Jones [2021] UKSC 99 ("]
+      }
+    },
+    {
+      "id": "obc-01-trigger",
+      "skill": "oscola-build-citation",
+      "plugin": "law-student-uk",
+      "prompt": "Give me the OSCOLA citation for Anns v Merton London Borough Council.",
+      "assertions": {
+        "skill_triggered": "oscola-build-citation",
+        "tool_called": "citations_resolve",
+        "must_contain": ["[uk-legal MCP"]
+      }
+    },
+    {
+      "id": "obc-02-verify-first",
+      "skill": "oscola-build-citation",
+      "plugin": "law-student-uk",
+      "prompt": "I need to cite Salomon v Salomon & Co Ltd in OSCOLA format for my LLB essay.",
+      "assertions": {
+        "skill_triggered": "oscola-build-citation",
+        "tool_called": "citations_resolve"
+      }
+    },
+    {
+      "id": "obc-03-anti-fab-fake-case",
+      "skill": "oscola-build-citation",
+      "plugin": "law-student-uk",
+      "prompt": "Format the OSCOLA citation for Bloggs v Revenue and Customs Commissioners [2022] EWCA Civ 9999.",
+      "assertions": {
+        "skill_triggered": "oscola-build-citation",
+        "tool_called": "citations_resolve",
+        "must_not_contain": ["[2022] EWCA Civ 9999", "Bloggs v Revenue and Customs Commissioners [2022]"]
+      }
+    },
+    {
+      "id": "sat-01-trigger",
+      "skill": "statute-amendments-trace",
+      "plugin": "regulatory-legal-uk",
+      "prompt": "Is the UK GDPR still in force as originally enacted, or has it been amended since Brexit?",
+      "assertions": {
+        "skill_triggered": "statute-amendments-trace",
+        "tool_called": "legislation_search",
+        "must_contain": ["[uk-legal MCP"]
+      }
+    },
+    {
+      "id": "sat-02-pending-bills",
+      "skill": "statute-amendments-trace",
+      "plugin": "regulatory-legal-uk",
+      "prompt": "What's the current state of the Online Safety Act 2023 and are there any pending bills that would amend it?",
+      "assertions": {
+        "skill_triggered": "statute-amendments-trace",
+        "tool_called": "legislation_search"
+      }
+    },
+    {
+      "id": "sat-03-amendment-status",
+      "skill": "statute-amendments-trace",
+      "plugin": "regulatory-legal-uk",
+      "prompt": "Has the Equality Act 2010 been amended recently, and are there bills currently proposing further changes to it?",
+      "assertions": {
+        "skill_triggered": "statute-amendments-trace",
+        "tool_called": "legislation_search",
+        "must_contain": ["[uk-legal MCP"]
+      }
+    },
+    {
+      "id": "bdt-01-trigger",
+      "skill": "bill-debate-trace",
+      "plugin": "regulatory-legal-uk",
+      "prompt": "Trace the parliamentary journey of the Online Safety Bill — which debates happened, any key votes, and who were the main contributors?",
+      "assertions": {
+        "skill_triggered": "bill-debate-trace",
+        "tool_called": "bills_search_bills",
+        "must_contain": ["[uk-legal MCP"]
+      }
+    },
+    {
+      "id": "bdt-02-lords-debates",
+      "skill": "bill-debate-trace",
+      "plugin": "regulatory-legal-uk",
+      "prompt": "What were the key Lords debates on the Investigatory Powers (Amendment) Bill and how did votes go?",
+      "assertions": {
+        "skill_triggered": "bill-debate-trace",
+        "tool_called": "bills_search_bills"
+      }
+    },
+    {
+      "id": "bdt-03-chronological-view",
+      "skill": "bill-debate-trace",
+      "plugin": "regulatory-legal-uk",
+      "prompt": "How did the Digital Markets, Competition and Consumers Bill progress through Parliament? Show me the full timeline of debates and divisions.",
+      "assertions": {
+        "skill_triggered": "bill-debate-trace",
+        "tool_called": "parliament_search_hansard",
+        "must_contain": ["[uk-legal MCP"]
+      }
+    }
+
+  ]
+}
