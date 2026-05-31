@@ -5,6 +5,11 @@
   "owner": {
     "name": "uk-agents"
   },
+  "homepage": "https://bouch.dev/products/uk-legal-plugins",
+  "repository": "https://github.com/uk-agents/uk-legal-plugins",
+  "license": "MIT",
+  "category": "legal",
+  "tags": ["uk", "legal", "law", "compliance", "open-source"],
   "plugins": [
     {
       "name": "ai-governance-legal-uk",
@@ -12,7 +17,9 @@
       "description": "UK AI governance legal workflows: use case triage against your registry, AI impact assessments across UK regulatory regimes (ICO AI guidance, UK GDPR / DPA 2018, CMA AI guidance, FCA AI requirements, Online Safety Act 2023, DSIT pro-innovation framework, EU AI Act for UK companies selling to the EU). Covers England & Wales, Scotland, and Northern Ireland, with EU AI Act cross-border obligations for UK companies with EU exposure.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/ai-governance-legal-uk",
+      "keywords": ["uk-law", "legal", "ai-governance", "ai-regulation", "uk-gdpr", "dpa-2018", "online-safety-act", "ai-impact-assessment"]
     },
     {
       "name": "commercial-legal-uk",
@@ -20,7 +27,9 @@
       "description": "Reviews vendor agreements, NDAs, and SaaS subscriptions against your sales-side or purchasing-side playbook under English contract law, tracks renewals and cancel-by deadlines before they're missed, routes escalations to the right approver (including CMA, FCA, and ICO referrals where required), and translates reviews into summaries business stakeholders will actually read. Covers England & Wales, Scotland, and Northern Ireland — with jurisdiction notes where Scots law diverges from English law.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/commercial-legal-uk",
+      "keywords": ["uk-law", "legal", "contracts", "nda", "saas", "commercial-law", "english-law", "vendor-agreements"]
     },
     {
       "name": "corporate-legal-uk",
@@ -28,7 +37,9 @@
       "description": "Runs M&A diligence at scale with cited tabular review under English law, builds disclosure letters and closing checklists, drafts board minutes and written resolutions in house format, and tracks entity compliance deadlines under the Companies Act 2006 across England & Wales, Scotland, and Northern Ireland. Covers UK takeover rules (Takeover Code / Panel), FCA/FSMA public company obligations, CMA merger control, Companies House filings, and PSC register management.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/corporate-legal-uk",
+      "keywords": ["uk-law", "legal", "ma-diligence", "companies-act-2006", "companies-house", "takeover-code", "board-minutes", "psc-register"]
     },
     {
       "name": "employment-legal-uk",
@@ -36,7 +47,9 @@
       "description": "Reviews hires and terminations for UK employment law risk flags, classifies workers across the employee/worker/self-employed spectrum, tracks statutory leave deadlines before they're missed, runs internal investigations, and drafts policies with jurisdiction supplements for England & Wales, Scotland, and Northern Ireland.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/employment-legal-uk",
+      "keywords": ["uk-law", "legal", "employment-law", "ir35", "worker-classification", "statutory-leave", "dismissal", "uk-employment"]
     },
     {
       "name": "ip-legal-uk",
@@ -44,7 +57,9 @@
       "description": "UK intellectual property practice: trade mark clearance and freedom-to-operate triage under Trade Marks Act 1994, copyright under CDPA 1988, patents under Patents Act 1977 and EPC, designs under the Registered Designs Act 1949 and CDPA 1988, trade secrets under English law of confidence and Trade Secrets (Enforcement, etc.) Regulations 2018, and open source compliance. Manages filings at the UK IPO (trade marks, patents, designs), tracks renewal deadlines, drafts and triages cease-and-desist letters and online takedowns (UK and EU notice regimes), reviews IP clauses, and handles post-Brexit UK/EU split portfolios. For use by solicitors, patent attorneys, Chartered Patent Attorneys, IP paralegals, and in-house IP teams operating in England & Wales, Scotland, and Northern Ireland.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/ip-legal-uk",
+      "keywords": ["uk-law", "legal", "trade-marks", "copyright", "patents", "designs", "uk-ipo", "cdpa-1988", "trade-marks-act-1994"]
     },
     {
       "name": "law-student-uk",
@@ -52,7 +67,9 @@
       "description": "Drills Socratically, briefs cases, builds outlines, runs SQE and LLB exam prep tuned to your subjects and qualification route, grades IRAC/CILAC practice, and plans the study schedule — without ever writing it for you. Built for the English, Welsh, Scottish, and Northern Irish legal education systems: LLB, GDL, SQE1/SQE2, BPTC, CILEx, and Scottish DPLP routes. Citations follow OSCOLA; cases sourced from BAILII and legislation from legislation.gov.uk.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/law-student-uk",
+      "keywords": ["uk-law", "legal", "sqe", "llb", "oscola", "irac", "case-brief", "law-exam", "legal-study"]
     },
     {
       "name": "legal-clinic-uk",
@@ -60,7 +77,9 @@
       "description": "Runs UK law school clinics operating under SRA and BSB supervision rules — structured client intake, OSCOLA-annotated research roadmaps, jurisdiction-aware drafting for England & Wales, Scotland, and Northern Ireland, and semester handoffs — all gated through a supervising solicitor or barrister and the student practice framework.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/legal-clinic-uk",
+      "keywords": ["uk-law", "legal", "law-clinic", "sra", "bsb", "oscola", "supervised-practice", "clinical-legal-education"]
     },
     {
       "name": "litigation-legal-uk",
@@ -68,7 +87,9 @@
       "description": "Manages a UK litigation portfolio — matters, CPR deadlines, preservation notices, Letters Before Action, external solicitors and counsel — and does the work: claim charts (patent and civil under English law), chronologies, cross-examination prep, LPP logs, skeleton argument drafting. Adapts to how you work litigation in England & Wales, Scotland, and Northern Ireland: in-house, firm, or solo.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/litigation-legal-uk",
+      "keywords": ["uk-law", "legal", "cpr", "litigation", "lba", "skeleton-argument", "lpp", "claim-chart", "english-procedure"]
     },
     {
       "name": "privacy-legal-uk",
@@ -76,7 +97,9 @@
       "description": "UK data-protection workflows under UK GDPR and DPA 2018: DPIA generation, DPA review (Art.28 processor obligations), DSAR response within the 1-month statutory deadline, lawful-basis triage with Children's Code checks, PECR and NIS coverage, and ICO-focused regulatory gap analysis. Configured to your practice profile and regulatory footprint.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/privacy-legal-uk",
+      "keywords": ["uk-law", "legal", "uk-gdpr", "dpa-2018", "dpia", "dsar", "pecr", "ico", "data-protection"]
     },
     {
       "name": "product-legal-uk",
@@ -84,7 +107,9 @@
       "description": "Reviews product launches against UK consumer protection law and your risk calibration, answers 'is this a problem?' questions in minutes, checks marketing copy for claims that need ASA/CAP Code substantiation, and flags upcoming launches that need legal eyes before anyone asks. Covers CMA, ASA, ICO, FCA, MHRA, and Online Safety Act exposure across the product lifecycle.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/product-legal-uk",
+      "keywords": ["uk-law", "legal", "consumer-protection", "asa", "cap-code", "cma", "mhra", "online-safety-act", "dmcc-act"]
     },
     {
       "name": "regulatory-legal-uk",
@@ -92,7 +117,9 @@
       "description": "Watches UK regulatory feeds (FCA, ICO, CMA, Ofcom, PRA, HSE, MHRA, HM Treasury, GOV.UK consultations, legislation.gov.uk), diffs new rules against your policy library, tracks consultation response deadlines and open gaps, and writes the digest your team reads Monday morning. Jurisdiction: England & Wales, Scotland, Northern Ireland.",
       "author": {
         "name": "uk-agents"
-      }
+      },
+      "homepage": "https://bouch.dev/products/uk-legal-plugins/regulatory-legal-uk",
+      "keywords": ["uk-law", "legal", "fca", "ico", "cma", "ofcom", "pra", "regulatory-feeds", "policy-diff", "hmrc"]
     }
   ]
 }
