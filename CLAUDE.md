@@ -1,8 +1,28 @@
 # CLAUDE.md
 
-Guidance for working on this repo. `uk-legal-plugins` is a Claude Code plugin
-marketplace — 11 UK-jurisdiction legal plugins. Most work here is editing
+Guidance for working on this repo. `uk-legal-plugins` is a UK-jurisdiction
+legal plugin marketplace — 11 plugins, 140+ skills. Most work here is editing
 prompt content (skills, agents, hooks) or plugin metadata — not application code.
+
+## Target ecosystems
+
+These plugins reach **three** MCP-speaking client ecosystems via dual-manifest packaging (`.claude-plugin/plugin.json` + `.codex-plugin/plugin.json` per plugin, sharing the same `skills/` + `.mcp.json`):
+
+| Ecosystem | Audience | Reaches via |
+|---|---|---|
+| Claude Code | Developer + lawyer-developers | `.claude-plugin/plugin.json` |
+| Cowork (Anthropic) | Anthropic collaborative env | Same as Claude Code |
+| OpenAI Codex CLI | OpenAI developer audience | `.codex-plugin/plugin.json` |
+
+ChatGPT consumer (~80M/week) is NOT reachable through these plugins — ChatGPT supports MCP tools only, no skills, no resources, no prompts. ChatGPT users connect directly to `uk-legal-mcp.fly.dev/mcp`; for them, the MCP server's tool descriptions are the only workflow-teaching layer. See `uk-legal-mcp/docs/chatgpt-workflow-encoding.md` (in the sibling repo).
+
+## Documentation index
+
+In `docs/`:
+
+- [`SPEC.md`](docs/SPEC.md) — pre-existing specification
+- [`skill-gaps-and-design.md`](docs/skill-gaps-and-design.md) — 5 new skills closing the dogfeed-failure workflows (find-member-contribution, find-case-by-party-verify, oscola-build-citation, statute-amendments-trace, bill-debate-trace)
+- [`distribution-strategy.md`](docs/distribution-strategy.md) — distribution decision (Option C1: single free public repo), dual-manifest plugin pattern, future revenue paths (recorded; not implemented)
 
 ## Layout
 
@@ -59,6 +79,38 @@ Every `agents/*.md` needs `name` and `description`. Every
 `skills/<name>/SKILL.md` needs `description`. Every `commands/*.md` needs
 `description`. Multi-line descriptions use `>` block scalars and that's fine —
 `claude plugin validate` parses them correctly.
+
+## Skill authoring conventions
+
+### MCP-native skill pattern (reference: `regulatory-legal-uk:reg-feed-watcher`)
+
+Skills that interact with `uk-legal-mcp` (or any other MCP server in `.mcp.json`) follow five characteristics, taken from `regulatory-legal-uk:reg-feed-watcher` which is the reference template:
+
+1. **"Pushy" trigger description.** YAML frontmatter `description:` opens with "USE WHEN the user says X / asks Y" — concrete user phrases. Agents systematically under-trigger when the description is passive ("a skill for searching"). Use `skill-creator`'s description-optimization loop on every new skill.
+
+2. **MCP tools named verbatim in prose.** Skill instructions write actual tool names: "Call `parliament_find_member(name)` to get the member_id." Not "look up the member." The agent matches actual tool names — named-verbatim wins.
+
+3. **Source-tagged outputs.** Skill output instructs the agent to tag claims with their source: `[uk-legal MCP — Hansard]`, `[uk-legal MCP — legislation.gov.uk]`, `[govuk MCP]`, `[model knowledge — verify]`. Tags propagate to the user's final response so provenance is visible.
+
+4. **"No silent supplement" anti-fabrication clause.** Every MCP-interacting skill includes language to the effect of: *"If a uk-legal MCP tool returns empty or errored, do NOT supplement from training data or web search. Report the empty result with `next_steps` / `detail` surfaced; ask the user for clarification rather than fabricating a plausible answer."* This tightens against confabulation under empty results (see `~/.claude/skill-observations/log.md` Obs 183).
+
+5. **Tier structure where applicable.** Tier 1 (authoritative MCP), Tier 2 (gov MCP), Tier 3 (broader feeds). Teach the agent WHEN to escalate sources, not just WHICH sources exist.
+
+### Content discipline — neutral procedural templates only
+
+All skills (and all tool descriptions in `uk-legal-mcp`) must be **NEUTRAL PROCEDURAL TEMPLATES**, NOT OPINIONATED ADVOCACY.
+
+| Acceptable | Not acceptable |
+|---|---|
+| "Workflow for retrieving what a peer said in a Hansard debate" | "Workflow for constructing a landlord's strongest defence argument" |
+| "USE WHEN the user asks for tenancy-related case law" | "USE WHEN defending a tenant in housing court" |
+| Skill flags `[UNCERTAIN]` for non-primary-source content | Skill recommends specific litigation positions or arguments |
+
+The free public connector is reachable by ~80M casual ChatGPT users who may misread legal-position framing as actual legal advice. Existing 140 skills already follow this discipline (e.g. `law-student-uk:case-brief` and `legal-clinic-uk:research-start` flag `[UNCERTAIN]` / `[VERIFY]`); new skills must maintain it.
+
+### Skill authoring procedure
+
+Use **Anthropic's `skill-creator`** skill (canonical, at `~/.claude/skills/skill-creator/`) — NOT one of the user's custom skill-creation packs. The Anthropic skill walks through: capture intent → draft SKILL.md → 2-3 test prompts → run claude-with-skill + baseline → evaluate via the eval-viewer → iterate → optimise description for triggering.
 
 ## Conventions
 
