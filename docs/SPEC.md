@@ -9,21 +9,22 @@ Every component here is filtered by the durability test: *would this still matte
 - **11 plugins live** under `<plugin>/` with `.claude-plugin/plugin.json`, `.mcp.json`, `skills/<name>/SKILL.md`, `agents/`, `hooks/`, per-plugin `CLAUDE.md` template (copied by `cold-start-interview` to `~/.claude/plugins/config/uk-legal-plugins/<plugin>/CLAUDE.md`).
 - **Marketplace manifest** at `.claude-plugin/marketplace.json` — alpha order warning is known/curated.
 - **Skill counts (audited):** employment 18, commercial 11, corporate 13, IP 12, privacy 9, product 7, regulatory 9, ai-governance 10, litigation 19, legal-clinic 16, law-student 13. Every plugin ships `cold-start-interview`, `customize`, `matter-workspace`.
-- **MCP wiring is inconsistent.** `employment-legal-uk` already points at production HTTPS Fly endpoints (`uk-legal-mcp.fly.dev`, `govuk-mcp.fly.dev`, `uk-due-diligence-mcp.fly.dev`, `whatdotheyknow-mcp.fly.dev`, `property-shared.fly.dev`) — this is the canonical shape. `commercial-legal-uk` and `litigation-legal-uk` still use placeholder `npx -y @modelcontextprotocol/server-uk-legal` stdio commands that don't exist on npm. **Normalising `.mcp.json` across all 11 plugins is the single highest-leverage Build item.**
+- **MCP wiring normalised (done, befebf9, 31 May 2026).** All 11 plugins now point at production HTTPS Fly endpoints. Live smoke test 2026-06-27: `legislation_search` → ERA 1996 confirmed via `uk-legal-mcp.fly.dev`.
+- **Phase B skills shipped (9a072ab, 31 May 2026).** 5 MCP-native skills across 10 plugins: `find-member-contribution`, `find-case-by-party-verify`, `oscola-build-citation`, `statute-amendments-trace`, `bill-debate-trace`. Eval manifest added (ca3b870).
 
 ## Coverage Matrix
 
 | Plugin | Citing UK sources | Use as-is | Extend | Build (critical) |
 |---|---|---|---|---|
 | **employment** | ERA 1996, Equality Act 2010, IR35/ITEPA, ACAS code, ET rules | 18 skills, MCP wired | Add Scots/NI ET divergence supplements | Auto-pulled ACAS Code links via govuk MCP |
-| **commercial** | English contract law (Misrep Act 1967, SGA, CRA 2015), Scots law notes | Definely/Ironclad/iManage MCP | Fix `.mcp.json` to HTTPS endpoints | Scots law divergence rules (delict, prescription) as a reference doc the model loads |
+| **commercial** | English contract law (Misrep Act 1967, SGA, CRA 2015), Scots law notes | Definely/Ironclad/iManage MCP | Add Scots law divergence rules (delict, prescription) as a reference doc the model loads | `statute-amendments-trace` skill shipped (Phase B) |
 | **corporate** | CA 2006, Takeover Code, FSMA 2000, PSC | Companies House via uk-due-diligence MCP | Add Takeover Panel feed connector | PSC/director sanction-list cross-check tool |
 | **ip** | TMA 1994, PA 1977, CDPA 1988, RDA 1949, Trade Secrets Regs 2018 | Skills full | UKIPO One IPO API connector (target 2026) | Portfolio-deadline calendar tool reading UKIPO once API ships [UKIPO One IPO programme — retrieved 2026-05-21](https://www.gov.uk/government/publications/one-ipo-transformation-programme) |
 | **privacy** | UK GDPR, DPA 2018, PECR, NIS Regs | Skills full | ICO reg-action feed (RSS) | DSAR 1-month deadline tracker with calendar hooks |
 | **product** | CRA 2015, DMCC Act 2024, OSA 2023, CAP Code, MHRA | Skills full | ASA ruling feed | DMCC 2024 unfair-practice checklist as skill |
 | **regulatory** | FCA, ICO, CMA, Ofcom, PRA, HSE, MHRA, HMT, GOV.UK consultations | `reg-feed-watcher` skill | Per-regulator RSS adapters | Diff-engine: changed-statute → policy-library impact |
 | **ai-governance** | ICO AI guidance, DSIT framework, EU AI Act (UK→EU), OSA | Skills full | Global AI Reg Tracker connector | UK-specific AI use-case registry schema (no equivalent exists) |
-| **litigation** | CPR, PD 57AC, Civil Evidence Act, Scots OCR/RCS, NI rules | 19 skills | Fix `.mcp.json` placeholders | HMCTS court listings connector (licensed programme — pending application) [HMCTS court data — retrieved 2026-05-21](https://www.gov.uk/government/publications/hmcts-data-strategy) |
+| **litigation** | CPR, PD 57AC, Civil Evidence Act, Scots OCR/RCS, NI rules | 19 skills + `find-case-by-party-verify` (Phase B) | Add Scots/NI procedural supplements | HMCTS court listings connector (licensed programme — pending application) [HMCTS court data — retrieved 2026-05-21](https://www.gov.uk/government/publications/hmcts-data-strategy) |
 | **legal-clinic** | SRA student practice rule, BSB pupillage rule, OSCOLA | Descrybe MCP | OSCOLA validator skill | Supervisor-signoff hook (irreversibility gate on client-facing outputs) |
 | **law-student** | LLB, GDL, SQE1/SQE2, BPTC, CILEx, Scots DPLP | Full | BAILII MCP wired by default | SQE syllabus mapper (free + viral) |
 
@@ -94,7 +95,7 @@ State of play, May 2026:
 
 ## Recommended Backlog (Build column, ordered)
 
-1. **Normalise `.mcp.json` across all 11 plugins** to the `employment-legal-uk` HTTPS shape. Kill placeholder `npx -y @modelcontextprotocol/server-uk-legal` references.
+1. ~~**Normalise `.mcp.json` across all 11 plugins**~~ — **Done** (befebf9, 31 May 2026).
 2. **Provenance + verify-with-lawyer skill-template invariant.** Lint check in `claude plugin validate` extension or CI.
 3. **`jurisdiction` parameter** mandatory on every drafting/review skill across commercial, corporate, litigation, employment, privacy.
 4. **`matter-workspace` audit-trail schema.** Frontmatter spec; CI lint.
