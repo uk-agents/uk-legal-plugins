@@ -1,0 +1,52 @@
+{
+  "journey": "cold-start-shared-profile",
+  "description": "New-user journey, stages 2-3: fresh install -> /cold-start-interview quick start writes a populated practice profile + shared company-profile.md; then a SECOND plugin's cold-start must READ the shared profile and NOT re-ask the company questions. Assertions are primarily filesystem side-effects (deterministic) plus lightweight transcript checks. Runs headless via `claude -p` against a sandboxed HOME. See README.md.",
+  "model": "claude-haiku-4-5-20251001",
+  "config_root": ".claude/plugins/config/uk-legal-plugins",
+  "turns": [
+    {
+      "id": "t1-employment-coldstart",
+      "note": "Fresh sandbox. Quick 2-min start with all answers pre-supplied so headless has no interactive Q&A to block on.",
+      "plugin_dir": "employment-legal-uk",
+      "prompt": "Run /employment-legal-uk:cold-start-interview as the QUICK 2-minute start. Do not ask me questions one at a time - here are all my answers, use them and WRITE THE CONFIG FILES TO DISK NOW. Role = Lawyer / legal professional. Practice setting = In-house. Company = Acme Widgets Ltd. Industry = SaaS software. Employees = 200. Nations with employees = England & Wales and Scotland. No international employees. HR lead = Jo Smith. Employment counsel = me (in-house). Use sensible defaults for everything else. You MUST call the Write tool to create both the per-plugin practice profile and the shared company-profile.md before you finish.",
+      "fs_assertions": [
+        { "type": "file_exists", "path": "employment-legal-uk/CLAUDE.md",
+          "why": "cold-start must persist the per-plugin practice profile" },
+        { "type": "file_exists", "path": "company-profile.md",
+          "why": "first plugin must write the shared company profile the others read" },
+        { "type": "file_contains", "path": "company-profile.md", "text": "Acme Widgets Ltd",
+          "why": "profile should capture the company name given in the interview" },
+        { "type": "file_contains_any", "path": "employment-legal-uk/CLAUDE.md",
+          "text": ["England & Wales", "England and Wales"],
+          "why": "jurisdictional footprint should be recorded" },
+        { "type": "file_contains", "path": "employment-legal-uk/CLAUDE.md", "text": "Scotland",
+          "why": "both stated nations should be recorded" },
+        { "type": "placeholder_count_below", "path": "employment-legal-uk/CLAUDE.md", "max": 25,
+          "why": "unwritten template has 29 [PLACEHOLDER; a real quick-start resolves most to defaults and leaves ~12. >=25 means it barely ran." },
+        { "type": "default_markers_present", "path": "employment-legal-uk/CLAUDE.md", "min": 5,
+          "why": "[DEFAULT markers prove quick-start actively filled sensible defaults (unwritten template has 0)" }
+      ],
+      "transcript_assertions": [
+        { "type": "must_contain_any", "text": ["cold-start", "cold start", "practice profile", "company profile"],
+          "why": "the run should be about setup, not something else" }
+      ]
+    },
+    {
+      "id": "t2-commercial-reads-shared-profile",
+      "note": "Same sandbox HOME -> company-profile.md from t1 persists on disk. Second plugin must read it and skip the company questions. Cascades: if t1 did not write the profile, this stage's read-and-skip cannot pass.",
+      "plugin_dir": "commercial-legal-uk",
+      "prompt": "Run /commercial-legal-uk:cold-start-interview as the quick start. If a shared company profile already exists, read it and confirm it back to me rather than re-asking the company questions.",
+      "fs_assertions": [
+        { "type": "file_unchanged_since", "path": "company-profile.md", "since_turn": "t1-employment-coldstart",
+          "why": "second plugin should reuse the shared profile, not overwrite it" }
+      ],
+      "transcript_assertions": [
+        { "type": "must_contain_any", "text": ["Acme Widgets", "company profile", "already", "existing profile"],
+          "why": "should acknowledge the shared profile it read" },
+        { "type": "must_not_contain_any",
+          "text": ["What is your company name", "What company do you", "How many employees do you"],
+          "why": "must NOT re-ask company questions the shared profile already answers" }
+      ]
+    }
+  ]
+}
